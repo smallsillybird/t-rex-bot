@@ -3,17 +3,58 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,
         maximum-scale=1.0, user-scalable=no">
-        <title>t.rex extracted</title>
+        <title>t.rex extracted with bot</title>
         <style>
             #offline-resources{
                 display: none;
             }
+            .runner-container {
+              height: 150px;              
+              overflow: hidden;
+              position: absolute;
+              top: 25px;
+              width: 44px;
+              z-index: 2;
+            }
+            .controller {
+              background: rgba(247,247,247, .1);
+              height: 100vh;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100vw;
+              z-index: 1;
+            }
+            #options {
+              position: absolute;
+              top: 250px;
+              left: 50px;
+              display: flex;
+              align-items: center;
+              z-index: 5;
+            }
+            #options > span {
+              margin-left: 10px;
+              margin-right: 50px;
+            }
+            #botStatus {
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+            }
+            #buttons {
+              position: absolute;
+              top: 250px;
+              right: 50px;
+              display: flex;
+              align-items: center;
+            }
         </style>
     </head>
-    <body>
+    <body >
         <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
         <img class="icon icon-offline" jseval="updateIconClass(this.classList, iconClass)" jstcache="1" style="visibility: hidden;">
-            <div class="runner-container" style="width: 600px; height: 150px;">
+            <div class="runner-container" >
                 <canvas class="runner-canvas" width="600" height="150"></canvas>
             </div>
         </div>
@@ -47,6 +88,10 @@
         <audio id="offline-sound-hit" src="assets/offline-sound-hit.mp3"></audio>
         <audio id="offline-sound-reached" src="assets/offline-sound-reached.mp3"></audio>
         </template> -->
+        <div id="options">
+          <input type="checkbox" id="botStatus" />
+          <span>Activate Bot?</span>
         <script src="scripts/runner.js"></script>
+        <script src="scripts/bot.js"></script>
     </body>
 </html>
